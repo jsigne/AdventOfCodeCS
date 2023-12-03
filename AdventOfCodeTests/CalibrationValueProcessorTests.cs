@@ -106,7 +106,58 @@ namespace AdventOfCodeTests
             //assert
             Assert.Equal(50, actualResult);
         }
+        
 
+        [Fact]
+        public void Calibration_Should_Return_32()
+        {
+            //arrange
+            string textsCalibrate = "three1two";
 
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(32, actualResult);
+        }        
+
+        [Fact]
+        public void Calibration_Should_Return_42()
+        {
+            //arrange
+            string textsCalibrate = "4threetwo";
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(42, actualResult);
+        }     
+
+        [Fact]
+        public void Calibration_OneSpelledDigit_Should_Return_22()
+        {
+            //arrange
+            string textsCalibrate = "two";
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(22, actualResult);
+        }
+
+        [Fact]
+        public void SumCalibration_Should_Return_42()
+        {
+            //arrange
+            List<string> textsToCalibrate = ["pqr3stfouruninevwx", "oneabc2"];
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.SumCalibrationValues(textsToCalibrate);
+
+            //assert
+            Assert.Equal(51, actualResult);
+        }
     }
 }
