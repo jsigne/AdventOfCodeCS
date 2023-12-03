@@ -8,20 +8,25 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode._2023.DayOne;
 
-public static class Trebuchet
+public static class CalibrationValueProcessor
 {
     private static readonly char[] digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 
-    public static int Calibrate(string textToCalibrate)
+    public static int ExtractCalibrationValue(string textToCalibrate)
     {
         if (string.IsNullOrEmpty(textToCalibrate))
         {
             return 0;
         }
-        char firstDigit = Trebuchet.firstDigit(textToCalibrate);
-        char lastDigit = Trebuchet.lastDigit(textToCalibrate);
+        char firstDigit = CalibrationValueProcessor.firstDigit(textToCalibrate);
+        char lastDigit = CalibrationValueProcessor.lastDigit(textToCalibrate);
 
         return int.Parse(string.Concat(firstDigit, lastDigit));
+    }
+
+    public static int SumCalibrationValues(List<string> texts)
+    {
+        return texts.Sum(ExtractCalibrationValue);
     }
 
     private static char firstDigit(string text)

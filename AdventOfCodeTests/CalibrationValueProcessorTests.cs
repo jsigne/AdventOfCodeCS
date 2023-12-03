@@ -2,7 +2,7 @@ using AdventOfCode._2023.DayOne;
 
 namespace AdventOfCodeTests
 {
-    public class TrebuchetTests
+    public class CalibrationValueProcessorTests
     {
 
         [Fact]
@@ -13,7 +13,7 @@ namespace AdventOfCodeTests
 
 
             //act
-            var actualResult = Trebuchet.Calibrate(TEXT_TO_CALIBRATE);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
 
             //assert
             Assert.Equal(0, actualResult);
@@ -27,7 +27,7 @@ namespace AdventOfCodeTests
             const string TEXT_TO_CALIBRATE = "1abc2";
 
             //act
-            var actualResult = Trebuchet.Calibrate(TEXT_TO_CALIBRATE);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
 
             //assert
             actualResult.Should().Be(12);
@@ -42,7 +42,7 @@ namespace AdventOfCodeTests
 
 
             //act
-            var actualResult = Trebuchet.Calibrate(TEXT_TO_CALIBRATE);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
 
             //assert
             Assert.Equal(38, actualResult);
@@ -57,7 +57,7 @@ namespace AdventOfCodeTests
 
 
             //act
-            var actualResult = Trebuchet.Calibrate(TEXT_TO_CALIBRATE);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
 
             //assert
             Assert.Equal(15, actualResult);
@@ -72,11 +72,26 @@ namespace AdventOfCodeTests
 
 
             //act
-            var actualResult = Trebuchet.Calibrate(TEXT_TO_CALIBRATE);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
 
             //assert
             Assert.Equal(77, actualResult);
             
         }
+
+        [Fact]
+        public void Calibration_Should_Return_50()
+        {
+            //arrange
+            List<string> textsToCalibrate = ["pqr3stu8vwx", "1abc2"];
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.SumCalibrationValues(textsToCalibrate);
+
+            //assert
+            Assert.Equal(50, actualResult);
+        }
+
+
     }
 }
