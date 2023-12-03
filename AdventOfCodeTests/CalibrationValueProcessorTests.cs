@@ -21,6 +21,21 @@ namespace AdventOfCodeTests
         }
 
         [Fact]
+        public void Calibration_Whitespace_Should_Return_0()
+        {
+            //arrange
+            const string TEXT_TO_CALIBRATE = "   ";
+
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(TEXT_TO_CALIBRATE);
+
+            //assert
+            Assert.Equal(0, actualResult);
+            
+        }
+
+        [Fact]
         public void Calibration_Should_Return_12()
         {
             //arrange

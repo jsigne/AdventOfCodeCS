@@ -14,7 +14,7 @@ public static class CalibrationValueProcessor
 
     public static int ExtractCalibrationValue(string textToCalibrate)
     {
-        if (string.IsNullOrEmpty(textToCalibrate))
+        if (string.IsNullOrWhiteSpace(textToCalibrate))
         {
             return 0;
         }
