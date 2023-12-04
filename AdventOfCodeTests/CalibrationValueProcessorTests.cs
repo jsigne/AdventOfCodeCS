@@ -148,16 +148,56 @@ namespace AdventOfCodeTests
         }
 
         [Fact]
-        public void SumCalibration_Should_Return_42()
+        public void Calibration_two1nine_Should_Return_29()
         {
             //arrange
-            List<string> textsToCalibrate = ["pqr3stfouruninevwx", "oneabc2"];
+            string textsCalibrate = "two1nine";
 
             //act
-            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.SumCalibrationValues(textsToCalibrate);
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
 
             //assert
-            Assert.Equal(51, actualResult);
+            Assert.Equal(29, actualResult);
         }
+
+        [Fact]
+        public void Calibration_eightwothree_Should_Return_83()
+        {
+            //arrange
+            string textsCalibrate = "eightwothree";
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(83, actualResult);
+        }
+
+        [Fact]
+        public void Calibration_abcone2threexyz_Should_Return_13()
+        {
+            //arrange
+            string textsCalibrate = "abcone2threexyz";
+
+            //act
+            var actualResult = AdventOfCode._2023.DayOne.CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(13, actualResult);
+        }
+
+        [Fact]
+        public void Calibration_xtwone3four_Should_Return_24()
+        {
+            //arrange
+            string textsCalibrate = "xtwone3four";
+
+            //act
+            var actualResult = CalibrationValueProcessor.ExtractCalibrationValue(textsCalibrate);
+
+            //assert
+            Assert.Equal(24, actualResult);
+        }
+
     }
 }
